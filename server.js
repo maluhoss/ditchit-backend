@@ -13,24 +13,19 @@ var router = express.Router();
 
 router.post("/recommendations", async function(req, res) {
   const quizResponses = req.body
-  
-  // console.log(req.body.location.city, typeof req.body.location.city)
-  const addressString = quizResponses.location.address.replace(/\s/g,'+')
-  const cityString = quizResponses.location.city.replace(/\s/g,'+')
-
-
-  // quizResponses = {
-  //     location: {city: "j", address: "iu", province: "ON", radius: 10000}
+  // e.g. quizResponses = {
+  //     location: {city: "Toronto", address: "123 Example St", province: "ON", radius: 10000}
   //      itemType: "Clothing"
   //      canDonate: false
   //   }
+  
+  const addressString = quizResponses.location.address.replace(/\s/g,'+')
+  const cityString = quizResponses.location.city.replace(/\s/g,'+')
 
   // query #1 : convert address to long and lat coordinates:
- 
   const initialCoordinatesResults = await axios.get(
     `https://maps.googleapis.com/maps/api/geocode/json?address=${addressString},+${cityString},+ON&key=${process.env.GOOGLE_API_KEY}`
   )
-
   const initialCoordinates = initialCoordinatesResults.data.results[0].geometry.location
   
 
@@ -84,6 +79,6 @@ app.use((err, req, res, next) => {
 });
 
 app.use("/ditchit", router);
-app.listen(8080, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log(`Example app listening on port 8080!`);
 });

@@ -1,0 +1,47 @@
+Arguments: 
+  /Users/maliha/.nvm/versions/node/v8.9.4/bin/node /usr/local/Cellar/yarn/1.21.1/libexec/bin/yarn.js add mongodb
+
+PATH: 
+  /Users/maliha/.rvm/gems/ruby-2.3.0/bin:/Users/maliha/.rvm/gems/ruby-2.3.0@global/bin:/Users/maliha/.rvm/rubies/ruby-2.3.0/bin:/Users/maliha/.nvm/versions/node/v8.9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/maliha/.rvm/bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  8.9.4
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: read ECONNRESET
+      at _errnoException (util.js:1022:11)
+      at TLSWrap.onread (net.js:615:25)
+
+npm manifest: 
+  {
+    "name": "ditchit-backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "nodemon server.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/maluhoss/ditchit-backend.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/maluhoss/ditchit-backend/issues"
+    },
+    "homepage": "https://github.com/maluhoss/ditchit-backend#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

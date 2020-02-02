@@ -68,6 +68,7 @@ router.post("/recommendations", async function(req, res) {
 
   res.json({
     initialCoordinates: initialCoordinates,
+    categories: queryTypesList,
     options: detailedPlaceList
   });
 });
